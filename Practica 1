@@ -1,0 +1,19 @@
+fun roundNumber(n: Int): String {
+    return when {
+        n < 1000 -> n.toString()
+        n in 1000..9999 -> "${n / 1000}К"
+        else -> "Число должно быть четырехзначным"
+    }
+}
+
+fun main() {
+    println("Введите четырехзначное число:")
+    val a = readLine()?.toIntOrNull()
+    
+    if (number != null) {
+        val result = roundNumber(a)
+        println("Получаем: $result")
+    } else {
+        println("Введите корректное число.")
+    }
+}
