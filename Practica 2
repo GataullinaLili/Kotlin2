@@ -1,0 +1,14 @@
+fun correct(years: Int): String {
+    return when {
+        years % 10 == 1 && years % 100 != 11 -> "$years год"
+        years % 10 in 2, 3, 4 && (years % 100 < 10 || years % 100 >= 20) -> "$years года"
+        else -> "$years лет"
+    }
+}
+
+fun main() {
+    println("Введите количество лет:")
+    val years = readLine()?.toIntOrNull() ?: 0
+
+    println(correct(years))
+}
